@@ -17,10 +17,11 @@ app.get("/", routes);
 app.post("/api/sendemail", cors(), async (req, res) => {
   const { email, name, celphone, document, moneda, poligonosData } = req.body;
 
+  const emails = ["ighione@norden.com.ar", "matiasbllzz@gmail.com"];
   console.log(poligonosData);
 
   try {
-    const send_to = email; //"ighione@norden.com.ar";
+    const send_to = emails; //"ighione@norden.com.ar";
     const sent_from = process.env.EMAIL_USER;
     const subject = "Pedido de cotización";
     const message = `
