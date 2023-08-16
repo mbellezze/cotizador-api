@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const sendEmail = require("./utils/sendEmail");
+const routes = require("./routes/api");
 
 const app = express();
 
@@ -11,9 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Route
-app.get("/", (req, res) => {
-  res.send("Home Page");
-});
+app.get("/", routes);
 
 app.post("/api/sendemail", cors(), async (req, res) => {
   const { email, name, celphone, document, moneda, poligonosData } = req.body;
@@ -81,7 +80,7 @@ app.post("/api/sendemail", cors(), async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 20000;
+const PORT = process.env.PORT || 5500;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}...`);
 });
