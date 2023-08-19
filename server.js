@@ -9,16 +9,16 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.json());
+
 app.use(cors());
 
 // Route
 app.get("/", routes);
 
-app.post("/api/sendemail", cors(), async (req, res) => {
+app.post("/api/sendemail", async (req, res) => {
   const { email, name, celphone, document, moneda, poligonosData } = req.body;
 
   //const emails = ["ighione@norden.com.ar", "matiasbllzz@gmail.com"];
-  console.log(poligonosData);
 
   try {
     const send_to = "matiasbllzz@gmail.com"; //emails; //"ighione@norden.com.ar";
