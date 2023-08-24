@@ -21,7 +21,7 @@ app.post("/api/sendemail", async (req, res) => {
   //const emails = ["ighione@norden.com.ar", "matiasbllzz@gmail.com"];
 
   try {
-    const send_to = "matiasbllzz@gmail.com"; //emails; //"ighione@norden.com.ar";
+    const send_to = "ighione@norden.com.ar";
     const sent_from = process.env.EMAIL_USER;
     const subject = "Pedido de cotización";
     const message = `
